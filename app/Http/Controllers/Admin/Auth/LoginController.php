@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -21,6 +22,13 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/admin/dashboard';
+
+    /**
      * Show the application's login form.
      *
      * @return \Illuminate\Http\Response
@@ -31,11 +39,14 @@ class LoginController extends Controller
     }
 
     /**
-     * Where to redirect users after login.
+     * Get the guard to be used during authentication.
      *
-     * @var string
+     * @return \Illuminate\Contracts\Auth\StatefulGuard
      */
-    protected $redirectTo = '/admin/dashboard';
+    protected function guard()
+    {
+        return Auth::guard('admin');
+    }
 
     /**
      * Create a new controller instance.

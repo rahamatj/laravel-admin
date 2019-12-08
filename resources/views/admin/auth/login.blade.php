@@ -5,7 +5,7 @@
 @section('content')
     <form method="POST" action="{{ route('admin.login') }}">
         @csrf
-        <h1>Admin Login</h1>
+        <h1>{{ __('Login') }}</h1>
         <div>
             <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email"
                    name="email"

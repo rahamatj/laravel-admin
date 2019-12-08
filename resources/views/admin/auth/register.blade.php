@@ -5,7 +5,7 @@
 @section('content')
     <form method="POST" action="{{ route('admin.register') }}">
         @csrf
-        <h1>Admin Register</h1>
+        <h1>{{ __('Register') }}</h1>
         <div>
             <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Name"
                    name="name" value="{{ old('name') }}" required autocomplete="name" autofocus/>

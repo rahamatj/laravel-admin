@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Auth;
 use App\Http\Controllers\Controller;
 use App\Admin;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -24,6 +25,13 @@ class RegisterController extends Controller
     use RegistersUsers;
 
     /**
+     * Where to redirect users after registration.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/admin/dashboard';
+
+    /**
      * Show the application registration form.
      *
      * @return \Illuminate\Http\Response
@@ -34,11 +42,14 @@ class RegisterController extends Controller
     }
 
     /**
-     * Where to redirect users after registration.
+     * Get the guard to be used during registration.
      *
-     * @var string
+     * @return \Illuminate\Contracts\Auth\StatefulGuard
      */
-    protected $redirectTo = '/admin/dashboard';
+    protected function guard()
+    {
+        return Auth::guard('admin');
+    }
 
     /**
      * Create a new controller instance.

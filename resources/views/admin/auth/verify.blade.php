@@ -14,7 +14,7 @@
         {{ __('Before proceeding, please check your email for a verification link.') }}
         {{ __('If you did not receive the email') }},
 
-        <div style="text-align: left">
+        <div class="text-left">
             <button type="submit" class="btn btn-default">
                 {{ __('click here to request another') }}
             </button>

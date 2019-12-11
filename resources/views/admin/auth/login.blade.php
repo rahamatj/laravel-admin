@@ -28,12 +28,12 @@
                 </span>
             @enderror
         </div>
-        <div class="checkbox" style="text-align: left">
+        <div class="checkbox text-left">
             <label>
                 <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
             </label>
         </div>
-        <div style="text-align: left">
+        <div class="text-left">
             <button type="submit" class="btn btn-default">
                 {{ __('Login') }}
             </button>

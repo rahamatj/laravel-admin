@@ -40,7 +40,7 @@
                 </span>
             @enderror
         </div>
-        <div style="text-align: left">
+        <div class="text-left">
             <button type="submit" class="btn btn-default">
                 {{ __('Reset Password') }}
             </button>

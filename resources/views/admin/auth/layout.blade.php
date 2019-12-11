@@ -20,6 +20,7 @@
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('/assets/admin/build') }}/css/custom.min.css" rel="stylesheet">
+    <link href="{{ asset('/assets/admin') }}/css/auth.css" rel="stylesheet">
 </head>
 
 <body class="login">

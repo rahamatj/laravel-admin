@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Admin\HasRoles;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -9,7 +10,7 @@ use App\Notifications\Admin\ResetPassword as ResetPasswordNotification;
 
 class Admin extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, HasRoles;
 
     protected $guard = 'admin';
 

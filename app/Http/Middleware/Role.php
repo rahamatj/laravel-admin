@@ -20,7 +20,7 @@ class Role
                 ->with('alert-danger', 'Please log in first, thanks!');
         }
 
-        if($request->user()->hasPermission($request->route()->getName())) {
+        if($request->user()->hasPermission($request->route()->uri())) {
             return $next($request);
         }
 

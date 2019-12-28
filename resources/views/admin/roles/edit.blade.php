@@ -77,12 +77,12 @@
                                         <div class="checkbox">
                                             <label>
                                               <input type="checkbox" name="routes[]"
-                                                    value="{{ $roleRoute->uri() }}"
+                                                    value="{{ $roleRoute }}"
                                                     @foreach($role->permissions as $permission)
-                                                        {{ $permission->route == $roleRoute->uri()
+                                                        {{ $permission->route == $roleRoute
                                                                 ? 'checked' : '' }}
                                                     @endforeach>
-                                              {{ $roleRoute->uri() }}
+                                              {{ $roleRoute }}
                                             </label>
                                         </div>
                                     </li>

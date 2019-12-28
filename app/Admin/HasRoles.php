@@ -37,10 +37,6 @@ trait HasRoles
 
     public function hasPermission($route)
     {
-        if(!(strpos($route, '.') === false)) {
-            $route = Route::getRoutes()->getByName($route)->uri();
-        }
-
         $permissions = Permission::where('route', $route)->get();
 
         $roles = $permissions->map(function ($permission) {

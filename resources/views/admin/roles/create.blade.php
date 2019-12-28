@@ -59,8 +59,8 @@
                                         <div class="checkbox">
                                             <label>
                                               <input type="checkbox" name="routes[]"
-                                                    value="{{ $roleRoute->uri() }}">
-                                              {{ $roleRoute->uri() }}
+                                                    value="{{ $roleRoute }}">
+                                              {{ $roleRoute }}
                                             </label>
                                         </div>
                                     </li>

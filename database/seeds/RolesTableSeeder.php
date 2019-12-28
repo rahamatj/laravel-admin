@@ -21,12 +21,8 @@ class RolesTableSeeder extends Seeder
            'description' => 'Admin'
         ]);
 
-        $roleRoutes = array_map(function($route) {
-            return $route->uri();
-        }, RoleRoute::get());
-
         $role->permissions()
-            ->createMany(ArrayChunkWithKey::create('route', $roleRoutes));
+            ->createMany(ArrayChunkWithKey::create('route', RoleRoute::get()));
 
         $admin = Admin::create([
             'name' => 'Admin',

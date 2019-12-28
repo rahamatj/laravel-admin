@@ -32,14 +32,14 @@
                 <ul class="nav side-menu">
                     <li><a><i class="fa fa-user-md"></i> Roles <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="index.html">All</a></li>
-                            <li><a href="index2.html">New</a></li>
+                            <li><a href="{{ route('admin.roles.index') }}">All</a></li>
+                            <li><a href="{{ route('admin.roles.create') }}">New</a></li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-user"></i> Admins <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="index.html">All</a></li>
-                            <li><a href="index2.html">New</a></li>
+                            <li><a href="{{ route('admin.admins.index') }}">All</a></li>
+                            <li><a href="{{ route('admin.admins.create') }}">New</a></li>
                         </ul>
                     </li>
                 </ul>

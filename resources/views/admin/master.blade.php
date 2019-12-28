@@ -27,6 +27,8 @@
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('assets/admin/build') }}/css/custom.min.css" rel="stylesheet">
+    <!-- Custom style -->
+    <link href="{{ asset('assets/admin/css') }}/custom.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">

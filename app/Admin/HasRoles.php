@@ -9,7 +9,7 @@ trait HasRoles
 {
     public function roles()
     {
-        return $this->hasMany(Role::class);
+        return $this->belongsToMany(Role::class);
     }
 
     public function hasOneOfRoles($roles)

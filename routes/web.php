@@ -31,11 +31,11 @@ Route::group([
     Route::middleware('auth:admin')->group(function() {
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
-        Route::middleware('role')->group(function() {
+//        Route::middleware('role')->group(function() {
             Route::resources([
                 'roles' => 'RoleController',
                 'admins' => 'AdminController'
             ]);
-        });
+//        });
     });
 });

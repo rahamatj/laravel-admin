@@ -1,4 +1,4 @@
-@extends('admin.auth.layout')
+@extends('admin.auth.master')
 
 @section('title', 'Reset Password')
 

@@ -70,18 +70,18 @@
                                     for="description">Routes <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                            <ul class="admin-routes">
+                            <ul class="role-routes">
                                 @foreach($roleRoutes as $roleRoute)
                                     <li>
                                         <div class="checkbox">
                                             <label>
                                               <input type="checkbox" name="routes[]"
-                                                    value="{{ $roleRoute }}"
+                                                    value="{{ $roleRoute->uri() }}"
                                                     @foreach($role->permissions as $permission)
-                                                        {{ $permission->route == $roleRoute
+                                                        {{ $permission->route == $roleRoute->uri()
                                                                 ? 'checked' : '' }}
                                                     @endforeach>
-                                              {{ $roleRoute }}
+                                              {{ $roleRoute->uri() }}
                                             </label>
                                         </div>
                                     </li>

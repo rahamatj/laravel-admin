@@ -53,19 +53,24 @@
                                 for="description">Routes <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <ul class="admin-routes">
+                            <ul class="role-routes">
                                 @foreach($roleRoutes as $roleRoute)
                                     <li>
                                         <div class="checkbox">
                                             <label>
                                               <input type="checkbox" name="routes[]"
-                                                    value="{{ $roleRoute }}">
-                                              {{ $roleRoute }}
+                                                    value="{{ $roleRoute->uri() }}">
+                                              {{ $roleRoute->uri() }}
                                             </label>
                                         </div>
                                     </li>
                                 @endforeach
                             </ul>
+                            @if ($errors->has('routes'))
+                                <span class="invalid-feedback" role="alert">
+                                  {{ $errors->first('routes') }}
+                              </span>
+                            @endif
                         </div>
                         </div>
                         <div class="ln_solid"></div>

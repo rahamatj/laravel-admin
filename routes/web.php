@@ -44,7 +44,8 @@ Route::group([
 
             Route::resources([
                 'roles' => 'RoleController',
-                'admins' => 'AdminController'
+                'admins' => 'AdminController',
+                'users' => 'UserController'
             ]);
         });
     });

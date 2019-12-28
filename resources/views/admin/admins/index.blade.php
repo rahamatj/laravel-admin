@@ -36,7 +36,7 @@
                             <td>{{ ++$sl }}</td>
                             <td>
                                 <a title="View"
-                                   href="{{ route('admin.admins.admins.show', ['admin' => $admin]) }}">
+                                   href="{{ route('admin.admins.show', ['admin' => $admin]) }}">
                                     {{ $admin->name }}
                                 </a>
                             </td>
@@ -79,7 +79,7 @@
                                 </a>
                                 <form id="delete-admin-form-{{ $admin->id }}"
                                       method="POST" style="display: none;"
-                                      action="{{ route('admin.admins.admins.destroy', ['admin' => $admin]) }}">
+                                      action="{{ route('admin.admins.destroy', ['admin' => $admin]) }}">
                                     @csrf
                                     @method('DELETE')
                                 </form>

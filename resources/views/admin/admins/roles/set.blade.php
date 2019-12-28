@@ -25,7 +25,7 @@
                                         <li>
                                             <div class="checkbox">
                                                 <label>
-                                                  <input type="checkbox" name="designations[]"
+                                                  <input type="checkbox" name="roles[]"
                                                         value="{{ $role->id }}"
                                                         @foreach($admin->roles as $adminRole)
                                                             {{ $adminRole->id == $role->id
@@ -37,6 +37,11 @@
                                         </li>
                                     @endforeach
                                 </ul>
+                                @if ($errors->has('roles'))
+                                    <span class="invalid-feedback" role="alert">
+                                        {{ $errors->first('roles') }}
+                                    </span>
+                                @endif
                             </div>
                         </div>
                         <div class="ln_solid"></div>

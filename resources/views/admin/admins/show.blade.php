@@ -49,7 +49,7 @@
                         <td>{{ $admin->email }}</td>
                     </tr>
                     <tr>
-                        <th class="col-lg-2">Designations</th>
+                        <th class="col-lg-2">Roles</th>
                         <td>
                             <ul>
                                 @foreach($admin->roles as $role)

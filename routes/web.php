@@ -26,7 +26,9 @@ Route::group([
     'as' => 'admin.',
     'namespace' => 'Admin',
 ], function() {
-    Auth::routes();
+    Auth::routes([
+        'register' => false
+    ]);
 
     Route::middleware('auth:admin')->group(function() {
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');

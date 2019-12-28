@@ -13,9 +13,9 @@
                 <div class="col-lg-7 text-right">
                     <a href="{{ route('admin.users.index') }}" class="btn btn-primary">All</a>
                     <a href="{{ route('admin.users.create') }}" class="btn btn-success">New</a>
-                    <a href="{{ route('admin.users.edit', ['admin' => $user]) }}"
+                    <a href="{{ route('admin.users.edit', ['user' => $user]) }}"
                         class="btn btn-info">Edit</a>
-                    <a href="{{ route('admin.users.password.change', ['admin' => $user]) }}"
+                    <a href="{{ route('admin.users.password.change', ['user' => $user]) }}"
                         class="btn btn-warning">Change Password</a>
                     <a href="javascript:void(0)"
                         class="btn btn-danger"
@@ -26,7 +26,7 @@
                       Delete
                     </a>
                     <form id="delete-user-form" method="POST" style="display: none;"
-                          action="{{ route('admin.users.destroy', ['admin' => $user]) }}">
+                          action="{{ route('admin.users.destroy', ['user' => $user]) }}">
                           @csrf
                           @method('DELETE')
                     </form>

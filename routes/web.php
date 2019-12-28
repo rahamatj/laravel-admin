@@ -42,6 +42,11 @@ Route::group([
             Route::post('admins/{admin}/roles', 'AdminController@setRoles')
                 ->name('admins.roles.set');
 
+            Route::get('users/{user}/password/change', 'UserController@changePassword')
+                ->name('users.password.change');
+            Route::post('users/{user}/password/change', 'UserController@updatePassword')
+                ->name('users.password.update');
+
             Route::resources([
                 'roles' => 'RoleController',
                 'admins' => 'AdminController',

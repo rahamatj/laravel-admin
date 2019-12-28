@@ -120,7 +120,7 @@ class RoleController extends Controller
 
     protected function roleRoutes()
     {
-        return array_filter(Route::getRoutes()->get(), function ($route) {
+        return array_filter(Route::getRoutes()->get('GET'), function ($route) {
             return in_array('role', $route->gatherMiddleWare(), true);
         });
     }

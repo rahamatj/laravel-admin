@@ -4,6 +4,7 @@ namespace App\Admin;
 
 use App\Role;
 use App\Permission;
+use Illuminate\Support\Facades\Route;
 
 trait HasRoles
 {
@@ -14,15 +15,11 @@ trait HasRoles
 
     public function hasOneOfRoles($roles)
     {
-        if (is_array($roles)) {
+        if (!$roles->isEmpty()) {
             foreach ($roles as $role) {
                 if ($this->hasRole($role)) {
                     return true;
                 }
-            }
-        } else {
-            if ($this->hasRole($roles)) {
-                return true;
             }
         }
 
@@ -40,6 +37,10 @@ trait HasRoles
 
     public function hasPermission($route)
     {
+        if(!(strpos($route, '.') === false)) {
+            $route = Route::getRoutes()->getByName($route)->uri();
+        }
+
         $permissions = Permission::where('route', $route)->get();
 
         $roles = $permissions->map(function ($permission) {
@@ -48,8 +49,8 @@ trait HasRoles
 
         if ($this->hasOneOfRoles($roles)) {
             return true;
-        } else {
-            return false;
         }
+
+        return false;
     }
 }

@@ -12,7 +12,7 @@
                             <h2>Admins - New</h2>
                             <div class="clearfix"></div>
                         </div>
-                        <div class="col-lg-5">
+                        <div class="col-lg-5 text-right">
                             <a href="{{ route('admin.admins.index') }}"
                                 class="btn btn-primary">All</a>
                         </div>

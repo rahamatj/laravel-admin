@@ -31,7 +31,7 @@ Route::group([
     Route::middleware('auth:admin')->group(function() {
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
-//        Route::middleware('role')->group(function() {
+        Route::middleware('role')->group(function() {
             Route::get('admins/{admin}/password/change', 'AdminController@changePassword')
                 ->name('admins.password.change');
             Route::post('admins/{admin}/password/change', 'AdminController@updatePassword')
@@ -46,6 +46,6 @@ Route::group([
                 'roles' => 'RoleController',
                 'admins' => 'AdminController'
             ]);
-//        });
+        });
     });
 });

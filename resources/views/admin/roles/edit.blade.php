@@ -14,6 +14,7 @@
                         </div>
 
                         <div class="col-lg-5 text-right">
+                            <a href="{{ route('admin.roles.show', ['role' => $role]) }}" class="btn btn-info">View</a>
                             <a href="{{ route('admin.roles.index') }}" class="btn btn-primary">All</a>
                             <a href="{{ route('admin.roles.create') }}" class="btn btn-success">New</a>
                             <a href="javascript:void(0)"

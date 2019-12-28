@@ -42,6 +42,7 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
+            @include('admin.includes.alert')
             @yield('content')
         </div>
         <!-- /page content -->

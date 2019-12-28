@@ -8,8 +8,17 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Admins - {{ $admin->name }} - Change Password</h2>
-                        <div class="clearfix"></div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <h2>Admins - {{ $admin->name }} - Change Password</h2>
+                            </div>
+                            <div class="col-lg-5 text-right">
+                                <a href="{{ route('admin.admins.show', ['admin' => $admin]) }}"
+                                   class="btn btn-info">View</a>
+                                <a href="{{ route('admin.admins.index') }}" class="btn btn-primary">All</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
                     </div>
                     <div class="x_content">
                         <form action="{{ route('admin.admins.password.update', ['admin' => $admin]) }}"

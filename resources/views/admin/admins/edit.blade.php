@@ -13,6 +13,7 @@
                                 <h2>Admins - Edit - {{ $admin->name }}</h2>
                             </div>
                             <div class="col-lg-5 text-right">
+                                <a href="{{ route('admin.admins.show', ['admin' => $admin]) }}" class="btn btn-info">View</a>
                                 <a href="{{ route('admin.admins.index') }}" class="btn btn-primary">All</a>
                                 <a href="{{ route('admin.admins.create') }}" class="btn btn-success">New</a>
                                 <a href="{{ route('admin.admins.password.change', ['admin' => $admin]) }}"
@@ -26,7 +27,7 @@
                                   Delete
                                 </a>
                                 <form id="delete-admin-form" method="POST" style="display: none;"
-                                      action="{{ route('admin.admins.admins.destroy', ['admin' => $admin]) }}">
+                                      action="{{ route('admin.admins.destroy', ['admin' => $admin]) }}">
                                     @csrf
                                     @method('DELETE')
                                 </form>

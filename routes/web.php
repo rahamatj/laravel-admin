@@ -34,6 +34,10 @@ Route::group([
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
         Route::middleware('role')->group(function() {
+            Route::resource('roles', 'RoleController');
+
+            Route::resource('admins', 'AdminController');
+
             Route::get('admins/{admin}/password/change', 'AdminController@changePassword')
                 ->name('admins.password.change');
             Route::post('admins/{admin}/password/change', 'AdminController@updatePassword')
@@ -44,16 +48,12 @@ Route::group([
             Route::post('admins/{admin}/roles', 'AdminController@setRoles')
                 ->name('admins.roles.set');
 
+            Route::resource('users', 'UserController');
+
             Route::get('users/{user}/password/change', 'UserController@changePassword')
                 ->name('users.password.change');
             Route::post('users/{user}/password/change', 'UserController@updatePassword')
                 ->name('users.password.update');
-
-            Route::resources([
-                'roles' => 'RoleController',
-                'admins' => 'AdminController',
-                'users' => 'UserController'
-            ]);
         });
     });
 });
